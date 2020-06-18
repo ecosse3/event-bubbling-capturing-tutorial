@@ -1,4 +1,25 @@
 .box {
   border: 1px solid gray;
   padding: 20px;
+  background: white;
+}
+
+.one.active {
+  background: #FF8C00;
+}
+
+.two.active {
+  background: #FFA500;
+}
+
+.three.active {
+  background: #FFD700;
+}
+
+.four.active {
+  background: #FF4500;
+}
+
+.five.active {
+  background: #FF6347;
 }

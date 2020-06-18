@@ -5,27 +5,73 @@ document.addEventListener('DOMContentLoaded', () => {
   const four = document.querySelector('.four')
   const five = document.querySelector('.five')
 
-  one.addEventListener('bubblingcapturing', event => {
-    console.log(`Otrzymano zdarzenie - el. 1. Faza ${translatePhase(event.eventPhase)}`)
+  let timer = 0;
+
+  // Capturing
+
+  one.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      one.classList.add('active')
+        }, timer += 500)
   }, {capture: true})
 
-  two.addEventListener('bubblingcapturing', event => {
-    console.log(`Otrzymano zdarzenie - el. 2. Faza ${translatePhase(event.eventPhase)}`)
+  two.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      two.classList.add('active')
+        }, timer += 500)
   }, {capture: true})
 
-  three.addEventListener('bubblingcapturing', event => {
-    console.log(`Otrzymano zdarzenie - el. 3. Faza ${translatePhase(event.eventPhase)}`)
+  three.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      three.classList.add('active')
+        }, timer += 500)
   }, {capture: true})
 
-  four.addEventListener('bubblingcapturing', event => {
-    console.log(`Otrzymano zdarzenie - el. 4. Faza ${translatePhase(event.eventPhase)}`)
+  four.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      four.classList.add('active')
+        }, timer += 500)
   }, {capture: true})
 
-  five.addEventListener('bubblingcapturing', event => {
-    console.log(`Otrzymano zdarzenie - el. 5. Faza ${translatePhase(event.eventPhase)}`)
+  five.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      five.classList.add('active')
+        }, timer += 500)
   }, {capture: true})
 
-  five.dispatchEvent(new CustomEvent('bubblingcapturing'))
+  // Bubbling
+
+  one.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      one.classList.remove('active')
+        }, timer += 500)
+  })
+
+  two.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      two.classList.remove('active')
+        }, timer += 500)
+  })
+
+  three.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      three.classList.remove('active')
+        }, timer += 500)
+  })
+
+  four.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      four.classList.remove('active')
+        }, timer += 500)
+  })
+
+  five.addEventListener('bubblingcapturing', () => {
+    setTimeout(() => {
+      five.classList.remove('active')
+        }, timer += 500)
+  })
+
+  five.dispatchEvent(new CustomEvent('bubblingcapturing', {bubbles: true}))
 
 })
 
@@ -37,6 +83,5 @@ function translatePhase(eventPhase) {
       return 'at target';
     case 3:
       return 'bubbling';
-
   }
 }
