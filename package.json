@@ -1,0 +1,23 @@
+{
+  "name": "event-bubbling-capturing-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecosse3/event-bubbling-capturing-tutorial.git"
+  },
+  "author": "Ecosse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecosse3/event-bubbling-capturing-tutorial/issues"
+  },
+  "homepage": "https://github.com/ecosse3/event-bubbling-capturing-tutorial#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
